@@ -447,7 +447,26 @@ class DownloadFileView(View):
     
 class user_home(View):
     def get(self,request):
-        return render(request,"administrator/user_home.html")
+        userid = request.session['user_id']
+        total_files = SecureFile.objects.filter(userid__id=userid).count()
+
+        # File type counts
+        image_extensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff']
+        video_extensions = ['.mp4', '.avi', '.mov', '.mkv']
+        pdf_extensions = ['.pdf']
+
+        image_files = SecureFile.objects.filter(file__iendswith=tuple(image_extensions),userid__id=userid).count()
+        video_files = SecureFile.objects.filter(file__iendswith=tuple(video_extensions),userid__id=userid).count()
+        pdf_files = SecureFile.objects.filter(file__iendswith=tuple(pdf_extensions),userid__id=userid).count()
+
+        # Other files (not in the above categories)
+        other_files = total_files - (image_files + video_files + pdf_files)
+        print(f"Total Files: {total_files}")
+        print(f"Image Files: {image_files}")
+        print(f"Video Files: {video_files}")
+        print(f"PDF Files: {pdf_files}")
+        print(f"Other Files: {other_files}")
+        return render(request,"user/user_home.html",{'image_files':image_files,'video_files':video_files,'pdf_files':pdf_files,'other_files':other_files})
     
 class viewfiles(View):
     def get(self,request):
@@ -615,7 +634,33 @@ class DownloadFileView(View):
 
 
     
-    
+# views.py
+from django.shortcuts import render, redirect
+from django.views import View
+from .form import RatingForm
+from .models import Rating
+
+class RatingView(View):
+    template_name = 'user/rating.html'  # Template to render
+
+    def get(self, request):
+        # form = RatingForm()
+        return render(request, self.template_name)
+
+    def post(self, request):
+
+        form = RatingForm(request.POST)
+        if form.is_valid():
+            user_id = request.session.get('user_id')  # Use .get() to avoid KeyError
+            if not user_id:
+                return HttpResponse("User not authenticated.", status=403)
+            user=LoginTable.objects.get(id=user_id)
+            rating = form.save(commit=False)
+            rating.userid = user  # Assign logged-in user
+            rating.save()
+            return redirect('user_home')  # Redirect after submission
+        return render(request, self.template_name, {'form': form})
+
     
     
     

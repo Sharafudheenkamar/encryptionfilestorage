@@ -24,6 +24,7 @@ urlpatterns = [
     path('filelist', FileListView.as_view(), name='file_list'),
     path('addfiles/', UploadFileView.as_view(), name='upload_file'),
     path('download/<int:file_id>/', DownloadFileView.as_view(), name='download_file'),
+    path('rate/', RatingView.as_view(), name='rating_form'),
 ]
 
 

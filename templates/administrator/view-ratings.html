@@ -79,10 +79,10 @@
                             <tr>
                                 <td>{{forloop.counter}}</td>
                                 <td>{{i.userid.username}}</td>
-                                <td id="star-rating" data-rating="{{i.rating}}" style="width: 150px;"></td>
-                                <!-- <td>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, omnis sapiente aliquam molestiae quo reiciendis praesentium. Ipsum quam voluptate aut?</p>
-                                </td> -->
+                                <td id="star-rating" data-rating="{{i.rating}}" style="width: 150px;">{{i.rating}}</td>
+                                <td>
+                                    <p>{{i.feedback}}</p>
+                                </td>
                             </tr>
                             {% endfor %}
                            
