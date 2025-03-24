@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit File</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="wrapper">
+  <nav id="sidebar">
+    <!-- Same sidebar as you have in your Add File page -->
+    <!-- Copy sidebar from your add file page here -->
+  </nav>
+
+  <div id="content">
+    <button type="button" id="sidebarCollapse" class="btn btn-info">
+      <i class="fas fa-bars"></i>
+    </button> 
+
+    <div class="main">
+      <!-- Edit File Block -->
+      <div class="add-notification">
+        <form class="form" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <label for="title">Title:</label>
+          <input type="text" name="title" value="{{ file.title }}">
+
+          <span class="form-title">Replace file (optional)</span>
+          <label for="file-input" class="drop-container">
+            <span class="drop-title">Drop files here or click to select</span>
+            <input type="file" id="file-input" name="file">
+          </label>
+
+          <button type="submit" class="add-btn" style="background-color: #014749;">Update</button>
+        </form>
+      </div>
+      <!-- Edit File Block Ends -->
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

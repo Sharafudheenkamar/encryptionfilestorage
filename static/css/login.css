@@ -1,0 +1,94 @@
+body {
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-content: center;
+    align-items: center;
+    background-image: url('https://cdn.vectorstock.com/i/500p/00/37/padlock-concept-cyber-security-protection-vector-47170037.jpg');
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    height: 80vh;
+    padding-left: 200px;
+}
+
+.form-div {
+    background-color: rgba(4, 35, 62, 0.768);
+    border-radius: 10px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 15px #0b0b0b9c;
+}
+
+form {
+    width: 100%;
+
+    p {
+        color: #d2cecece;
+    }
+
+    a {
+        color: rgb(104, 203, 241);
+    }
+}
+
+form h2 {
+    text-align: center;
+    color: #fff;
+}
+
+form input {
+    display: block;
+    background-color: transparent;
+    padding: 10px 40px;
+    border: none;
+    border-bottom: 2px solid #ffffff67;
+    border-left: 2px solid #ffffff67;
+    border-bottom-left-radius: 15px;
+    width: 200px;
+    color: #fff;
+}
+
+form input:focus {
+    outline: none;
+}
+
+form div {
+    text-align: center;
+    padding-top: 20px;
+
+    button {
+        background-color: #fff;
+        padding: 5px 20px;
+        border: 2px solid #fff;
+        color: #033c6b;
+        border-radius: 5px;
+        font-weight: 800;
+    }
+
+}
+form .icon-div{
+    position: relative;
+}
+.icon-div i{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    color: #fff;
+}
+
+.register{
+    form input {
+        display: block;
+        background-color: transparent;
+        padding: 10px 10px;
+        border: 2px solid #ffffff67;
+        border-radius: 5px;
+        width: 250px;
+        color: #fff;
+        margin: 5px auto;
+    }
+    form label{
+        color: #fff;
+    }
+}

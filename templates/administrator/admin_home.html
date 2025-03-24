@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Sidebar Toggler</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+
+<div class="wrapper">
+  <nav id="sidebar">
+    <div id="dismiss" class="close">
+      <i class="fas fa-times"></i>
+    </div>
+    <div class="sidebar-header">
+        <h2>Cryst<img src="C:\Users\jamee\Downloads\18638841.jpg" alt="">
+        Admin</h2>
+    </div>
+
+    <ul class="list-unstyled components">
+        <li>
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-users fa-2X"></i>Users</a>
+            <ul class="collapse list-unstyled " id="homeSubmenu">
+              <li>
+                <a href="/user" id="btn-student"><i class="fa-solid fa-users"></i>active users</a>
+              </li>
+              <li>
+                <a class="instructor" id="inst_button" href="/blockedUser"><i class="fa-solid fa-users-slash"></i>Blocked Users</a>
+              </li>
+    
+            </ul>
+          </li>
+      <li>
+        <a href="/rating"><i class="fa-solid fa-star"></i>Ratings</a>
+      </li>
+      <li>
+        <a href="/"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div id="content">
+    <button type="button" id="sidebarCollapse" class="btn btn-info">
+      <i class="fas fa-bars"></i>
+    </button> 
+
+    <div class="main">
+        <!-- code block here -->
+        <div class="dash-div">
+              <div class="card-div dash">
+                <svg width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#014749"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>image-picture</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-360.000000, -99.000000)" fill="#014749"> <path d="M368,109 C366.896,109 366,108.104 366,107 C366,105.896 366.896,105 368,105 C369.104,105 370,105.896 370,107 C370,108.104 369.104,109 368,109 L368,109 Z M368,103 C365.791,103 364,104.791 364,107 C364,109.209 365.791,111 368,111 C370.209,111 372,109.209 372,107 C372,104.791 370.209,103 368,103 L368,103 Z M390,116.128 L384,110 L374.059,120.111 L370,116 L362,123.337 L362,103 C362,101.896 362.896,101 364,101 L388,101 C389.104,101 390,101.896 390,103 L390,116.128 L390,116.128 Z M390,127 C390,128.104 389.104,129 388,129 L382.832,129 L375.464,121.535 L384,112.999 L390,118.999 L390,127 L390,127 Z M364,129 C362.896,129 362,128.104 362,127 L362,126.061 L369.945,118.945 L380.001,129 L364,129 L364,129 Z M388,99 L364,99 C361.791,99 360,100.791 360,103 L360,127 C360,129.209 361.791,131 364,131 L388,131 C390.209,131 392,129.209 392,127 L392,103 C392,100.791 390.209,99 388,99 L388,99 Z" id="image-picture" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+                <h1>
+                 Total Users <br>
+                 <span>70</span>
+                </h1>
+              </div>
+              <div class="card-div dash">
+                <svg width="50px" height="50px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#014749"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="layer1"> <path d="M 0 3 L 0 17 L 20 17 L 20 3 L 0 3 z M 1 4 L 19 4 L 19 16 L 1 16 L 1 4 z M 2 5 L 2 6 L 3 6 L 3 5 L 2 5 z M 17 5 L 17 6 L 18 6 L 18 5 L 17 5 z M 7 6.1171875 L 7 13.882812 L 7.7578125 13.429688 L 13.472656 10 L 7 6.1171875 z M 8 7.8847656 L 11.525391 10 L 8 12.115234 L 8 7.8847656 z M 2 8 L 2 9 L 3 9 L 3 8 L 2 8 z M 17 8 L 17 9 L 18 9 L 18 8 L 17 8 z M 2 11 L 2 12 L 3 12 L 3 11 L 2 11 z M 17 11 L 17 12 L 18 12 L 18 11 L 17 11 z M 2 14 L 2 15 L 3 15 L 3 14 L 2 14 z M 17 14 L 17 15 L 18 15 L 18 14 L 17 14 z " style="fill:#014749; fill-opacity:1; stroke:none; stroke-width:0px;"></path> </g> </g></svg>
+                <h1>
+                 Blocked users <br>
+                 <span>10</span>
+                </h1>
+              </div>
+        </div>
+
+        <!-- code block ends -->
+    </div>
+  </div>
+
+ 
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
